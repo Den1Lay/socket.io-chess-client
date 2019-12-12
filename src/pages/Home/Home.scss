@@ -1,0 +1,35 @@
+.home {
+  &__mainLine {
+    display: flex;
+  }
+  &__leftTab {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }
+  &__rightTab {
+    flex: 3;
+  }
+  &__gameBoard {
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__alertZone {
+      height: fit-content;
+      display: flex;
+      margin: 10px
+    }
+    &__controlers {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      input[type="checkbox"] {
+        width: 100px;
+      }
+    }
+  }
+}

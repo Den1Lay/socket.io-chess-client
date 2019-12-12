@@ -1,0 +1,18 @@
+.knight {
+  font-size: 55px;
+  //margin-right: 10px;
+  cursor: move;
+  &__deadColor {
+    color: red;
+  }
+  &__isDraging {
+    opacity: 0.5;
+  }
+  &__darkSide {
+    color: #191970;
+  }
+  &__lightSide {
+    color: #FFD700;;
+  }
+  
+}

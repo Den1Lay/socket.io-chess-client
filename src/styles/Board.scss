@@ -1,0 +1,9 @@
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 720px !important;
+  height: 720px !important;
+  border: 3px solid silver;
+  box-shadow: 0 0 12px rgba(0,0,0,0.5);
+}

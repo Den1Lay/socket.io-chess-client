@@ -1,0 +1,50 @@
+.square {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #66CDAA;
+  //border: 1px solid #6A5ACD;
+  &__black{
+    background-color: #008B8B;
+  };
+  // &__red {
+  //   border: 4px solid red;
+  //   border-radius: 2px;
+  // };
+  // &__yellow {
+  //   border: 4px solid yellow;
+  //   border-radius: 2px;
+  // };
+  // &__green {
+  //   border: 4px solid green;
+  //   border-radius: 2px;
+  // };
+  &__deadColor {
+    color: 'red' !important;
+  }
+  &__boll {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    &--red {
+      background-color: red;
+    }
+    &--yellow {
+      background-color: #FDF5E6;
+    }
+    &--green {
+      background-color: #228B22;
+    }
+  }
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
