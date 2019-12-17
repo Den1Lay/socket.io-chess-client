@@ -4,9 +4,10 @@ import store from 'redux/store'
 
 const { gameSet, moveTo } = actions
 
-const socket = io('http://localhost:4000')
+const socket = io()
 
 socket.on('GAME:START_FINDING', () => {
+    console.log(window.location)
     console.log('CONFIRM')
   })
 socket.on('HANDSHAKE', ({socket}) => console.log(`Handshake: ${socket}`))
