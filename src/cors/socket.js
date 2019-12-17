@@ -4,7 +4,7 @@ import store from 'redux/store'
 
 const { gameSet, moveTo } = actions
 
-const socket = io()
+const socket = io(window.location.origin)
 
 socket.on('GAME:START_FINDING', () => {
     console.log(window.location)
