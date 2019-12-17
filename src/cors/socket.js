@@ -19,5 +19,8 @@ socket.on('GAME:MOVE', ({payload: {id, x, y}}) => {
   console.log('GetPayload')
   store.dispatch(moveTo(id, x, y))
 })
+socket.on('TEST:RES', ({payload}) => {
+  console.log(`TEST: ${payload}`)
+})
 
 export default socket

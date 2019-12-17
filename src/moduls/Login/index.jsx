@@ -1,26 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import classNames from 'classnames';
 
+import { socket } from 'cors'
 
 import './Login.scss'
 
-const Login = () => {
+const Login = function() {
+  const [user, setUser] = useState('')
+  //const [counter, setCounter] = useState(0)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) =>  {
     e.preventDefault()
-    console.log(e)
+    setInterval(() => {
+      socket.emit('TEST:USER', {user, payload: new Date})
+    }, 500)
+  }
+
+  const changeHandler = (e) => {
+    setUser(e.target.value)
   }
 
   return (
     <section className={classNames('login')}>
       
-      <Form onSubmit={() => handleSubmit} className="login-form">
+      <Form onSubmit={handleSubmit} className="login-form">
         <Form.Item>
           <span>ВХОД / РЕГИСТРАЦИЯ</span>
         </Form.Item>
         <Form.Item>
          <Input
+              onChange={changeHandler}
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Username"
             />
