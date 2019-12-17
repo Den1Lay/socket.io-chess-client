@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames'
-import { socket, axios } from 'cors'
+import { socket, axios } from 'core'
 
 import { Board } from 'containers'
 import { Button, Checkbox, Alert } from 'antd'

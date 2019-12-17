@@ -4,7 +4,7 @@ import { DragPreviewImage, useDrag } from 'react-dnd'
 import classNames from 'classnames'
 import actions from 'redux/actions'
 
-import { socket } from 'cors'
+import { socket } from 'core'
 
 import picture from 'img/picture.png'
 import './Knight.scss'

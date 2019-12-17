@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import classNames from 'classnames';
 
-import { socket } from 'cors'
+import { socket } from 'core'
 
 import './Login.scss'
 
@@ -16,6 +16,10 @@ const Login = function() {
       socket.emit('TEST:USER', {user, payload: new Date})
     }, 500)
   }
+  const pushHandler = () => {
+    socket.emit('TEST:USER', {user, payload: new Date})
+  }
+
 
   const changeHandler = (e) => {
     setUser(e.target.value)
@@ -24,7 +28,7 @@ const Login = function() {
   return (
     <section className={classNames('login')}>
       
-      <Form onSubmit={handleSubmit} className="login-form">
+      <Form className="login-form">
         <Form.Item>
           <span>ВХОД / РЕГИСТРАЦИЯ</span>
         </Form.Item>
@@ -43,7 +47,11 @@ const Login = function() {
             />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" className="login-form-button">
+          <Button 
+            onClick={pushHandler}
+            type="primary" 
+            htmlType="submit" 
+            className="login-form-button">
             Log in
           </Button>
         </Form.Item>
