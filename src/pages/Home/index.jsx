@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames'
-import { socket } from 'cors'
+import { socket, axios } from 'cors'
 
 import { Board } from 'containers'
 import { Button, Checkbox, Alert } from 'antd'
@@ -11,6 +11,12 @@ import './Home.scss'
 
 const Home = ({ next, me, address }) => {
   let [findStatus, setFindStatus] = useState(false)
+  
+  const httpHandler = () => {
+    axios.get('/data').then(({data}) => {
+      console.log('Req from server:', data)
+    })
+  }
 
   const findHandler = () => {
     if(!findStatus) {
@@ -46,7 +52,7 @@ const Home = ({ next, me, address }) => {
           </div>
           <Board />
           <div className='home__gameBoard__controlers'>
-            <Checkbox onChange={(e) => console.log(e)}>Использовать подсказки</Checkbox>
+            <Checkbox onChange={httpHandler}>HTTP REQ</Checkbox>
             {
               me.length > 0 
               ? <Button
